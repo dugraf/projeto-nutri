@@ -17,7 +17,7 @@ public class AppJavaFx extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/LoginView.fxml"));
             loader.setControllerFactory(springContext::getBean);
             Parent parent = loader.load();
             Scene mainScene = new Scene(parent);
