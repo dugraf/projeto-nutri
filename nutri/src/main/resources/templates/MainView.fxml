@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.view.controller.LoginController">
+   <children>
+      <Label layoutX="127.0" layoutY="36.0" text="Bem-Vindo!">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userName" layoutX="58.0" layoutY="92.0" promptText="Usuário" />
+      <PasswordField fx:id="password" layoutX="58.0" layoutY="150.0" promptText="Senha" />
+      <Button fx:id="btLogin" layoutX="140.0" layoutY="213.0" mnemonicParsing="false" onAction="#onBtLogin" text="Login" />
+      <Label fx:id="lblMessage" layoutX="150.0" layoutY="230.0" />
+   </children>
+</AnchorPane>

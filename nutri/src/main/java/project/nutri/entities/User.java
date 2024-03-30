@@ -23,6 +23,7 @@ public class User implements Serializable
     public User() {}
 
     public User(Long id, String name, String email, String password, LocalDateTime registrationDate, LocalDateTime lastLogin) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;
@@ -30,6 +31,7 @@ public class User implements Serializable
         this.registrationDate = registrationDate;
         this.lastLogin = lastLogin;
     }
+
 
     public Long getId() {
         return id;
@@ -108,5 +110,11 @@ public class User implements Serializable
         } else if (!email.equals(other.email))
             return false;
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
+                + ", registrationDate=" + registrationDate + ", lastLogin=" + lastLogin + "]";
     }
 }

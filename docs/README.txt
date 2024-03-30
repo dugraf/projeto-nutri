@@ -90,3 +90,6 @@
       - Considere implementar um ciclo de desenvolvimento ágil para atualizações frequentes.
 
 Lembre-se, esses são passos gerais e podem ser adaptados com base nas características específicas do seu projeto e equipe. O desenvolvimento de software é um processo iterativo, então esteja preparado para ajustar conforme necessário.
+
+//TODO - Inserir os FXML no diretorio RESOURCES
+//spring.datasource.url=jdbc:mysql://localhost:3306/aplicacao_exemplo_spring?createDatabaseIfNotExist=true

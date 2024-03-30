@@ -1,0 +1,38 @@
+.root {
+    -fx-background-color: #282c34; /* Cor de fundo */
+}
+
+.label {
+    -fx-font-size: 28px; /* Tamanho da fonte */
+    -fx-text-fill: #3eafce; /* Cor do texto */
+}
+
+.text-field,
+.password-field {
+    -fx-pref-width: 300px; /* Largura dos campos de texto */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-padding: 10px; /* Espaçamento interno */
+    -fx-background-color: #3e4249; /* Cor de fundo dos campos de texto */
+    -fx-text-fill: white; /* Cor do texto nos campos de texto */
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #3eafce; /* Cor da borda ao receber foco */
+}
+
+.button {
+    -fx-pref-width: 120px; /* Largura do botão */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-background-color: #3eafce; /* Cor de fundo do botão */
+    -fx-text-fill: white; /* Cor do texto do botão */
+}
+
+.button:hover {
+    -fx-background-color: #42a5f5; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.label-message {
+    -fx-text-fill: #FF5722; /* Cor do texto da mensagem de erro */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+}
