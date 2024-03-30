@@ -28,4 +28,9 @@ public class UserService
     {
         return repository.findByName(name);
     }
+
+    public void save(User user)
+    {
+        repository.save(user);
+    }
 }
