@@ -14,8 +14,10 @@ import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import project.nutri.controller.util.Alerts;
 import project.nutri.services.AuthenticationService;
 import project.nutri.services.exceptions.AuthenticationException;
 
@@ -52,6 +54,7 @@ public class LoginController implements Initializable {
         }
         catch(AuthenticationException e)
         {
+            Alerts.showAlert("Erro ao logar", null, "Usuário ou senha inválidos!", AlertType.WARNING);
             System.out.println(e.getMessage());
         }
     }

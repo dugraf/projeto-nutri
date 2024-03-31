@@ -15,8 +15,12 @@ public class AuthenticationService
     public boolean authentication(String name, String password)
     {
         User user = userService.findByName(name);
-        user.setLastLogin(LocalDateTime.now());
-        userService.save(user);
-        return user != null && user.getPassword().equals(password);
+        if(user != null)
+        {
+            user.setLastLogin(LocalDateTime.now());
+            userService.save(user);
+            return user.getPassword().equals(password);
+        }
+        return false;
     }
 }
