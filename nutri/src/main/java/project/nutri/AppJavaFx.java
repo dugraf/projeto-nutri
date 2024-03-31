@@ -14,13 +14,15 @@ import javafx.stage.Stage;
 public class AppJavaFx extends Application {
     private ConfigurableApplicationContext springContext;
 
+    private static Scene mainScene;
+
     @Override
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/LoginView.fxml"));
             loader.setControllerFactory(springContext::getBean);
             Parent parent = loader.load();
-            Scene mainScene = new Scene(parent);
+            mainScene = new Scene(parent);
             Image icon = new Image(getClass().getResourceAsStream("/templates/imgs/nutrition.png"));
             primaryStage.getIcons().add(icon);
             primaryStage.setScene(mainScene);
@@ -44,6 +46,11 @@ public class AppJavaFx extends Application {
     public void stop() {
         this.springContext.close();
         Platform.exit();
+    }
+
+    public static Scene getMainScene()
+    {
+        return mainScene;
     }
 }
     

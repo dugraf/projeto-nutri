@@ -1,15 +1,21 @@
 package project.nutri.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import project.nutri.services.AuthenticationService;
 import project.nutri.services.exceptions.AuthenticationException;
 
@@ -36,7 +42,11 @@ public class LoginController implements Initializable {
         try
         {
             if(authenticationService.authentication(login, pass))
+            {
                 System.out.println("Logou!");
+                openMainMenu();
+                closeLoginWindow();
+            }
             else
                 throw new AuthenticationException();
         }
@@ -54,5 +64,25 @@ public class LoginController implements Initializable {
 
     public Button getBtLogin() {
         return btLogin;
+    }
+
+    private void openMainMenu() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/templates/MenuView.fxml"));
+            Parent root = fxmlLoader.load();
+            Image icon = new Image(getClass().getResourceAsStream("/templates/imgs/nutrition.png"));
+            Stage stage = new Stage();
+            stage.setTitle("MENU");
+            stage.getIcons().add(icon);
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void closeLoginWindow() {
+        Stage stage = (Stage) btLogin.getScene().getWindow();
+        stage.close();
     }
 }
