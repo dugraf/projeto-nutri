@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="503.0" prefWidth="989.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.MenuController">
-
+   <children>
+      <VBox prefHeight="515.0" prefWidth="995.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Usuários">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onMenuItemCreateAction" text="Criar Usuários" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuItemSearchAction" text="Consultar Usuários" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
