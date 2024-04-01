@@ -24,11 +24,11 @@
             <TableColumn fx:id="tColumnPassword" prefWidth="173.0" text="SENHA" />
         </columns>
       </TableView>
-      <VBox layoutX="1009.0" prefHeight="47.0" prefWidth="54.0">
+      <VBox fx:id="vBoxNewUser" layoutX="1009.0" onMouseClicked="#onVBoxNewUserAction" prefHeight="47.0" prefWidth="54.0">
          <children>
             <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imgs/user.png" />
+                  <Image url="@imgs/addUser.png" />
                </image>
             </ImageView>
          </children>

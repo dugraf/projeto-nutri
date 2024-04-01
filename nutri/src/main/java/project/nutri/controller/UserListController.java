@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -49,13 +50,15 @@ public class UserListController implements Initializable
     @FXML
     public void onVBoxNewUserAction()
     {
-        callWindow.openWindow("/templates/UserList.fxml", "Usuários de sistema");
+        callWindow.openWindow("/templates/UserForm.fxml", "Usuários de sistema");
     }
 
 
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1)
+    public void initialize(URL url, ResourceBundle rb)
     {
+        vBoxNewUser.setOnMouseEntered(event -> vBoxNewUser.setCursor(Cursor.HAND));
+        vBoxNewUser.setOnMouseExited(event -> vBoxNewUser.setCursor(Cursor.DEFAULT));
         showTable();
     }
 
