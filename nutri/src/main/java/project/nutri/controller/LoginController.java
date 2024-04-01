@@ -62,11 +62,7 @@ public class LoginController implements Initializable {
         btLogin.setOnMouseEntered(event -> btLogin.setCursor(Cursor.HAND));
         btLogin.setOnMouseExited(event -> btLogin.setCursor(Cursor.DEFAULT));
     }
-
-    public Button getBtLogin() {
-        return btLogin;
-    }
-
+    
     private void openMainMenu() {
         callWindow.openWindow("/templates/MenuView.fxml", "MENU - Nutri");
     }

@@ -1,6 +1,7 @@
 package project.nutri.controller;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import project.nutri.controller.util.Alerts;
 import project.nutri.entities.User;
 import project.nutri.services.UserService;
 
@@ -40,16 +43,12 @@ public class UserFormController implements Initializable
     {
         user = getFormData();
         userService.save(user);
+        Alerts.showAlert("SALVO", "Usuário salvo no sistema", null, AlertType.CONFIRMATION);
     }
 
     private User getFormData()
     {
-        User user = new User();
-
-        user.setName(name.getText());
-        user.setEmail(email.getText());
-        user.setPassword(password.getText());
-
+        User user = new User(null, name.getText(), email.getText(), password.getText(), LocalDateTime.now(), null);
         return user;
     }
 

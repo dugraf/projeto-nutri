@@ -5,33 +5,32 @@ import java.util.ResourceBundle;
 import org.springframework.stereotype.Component;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
+import javafx.scene.Cursor;
+import javafx.scene.control.Menu;
+import javafx.scene.layout.VBox;
 import project.nutri.controller.util.CallWindow;
 
 @Component
 public class MenuController implements Initializable
 {
-    @FXML
-    private MenuItem menuItemCreate;
-
-    @FXML
-    private MenuItem menuItemSearch;
-
     private CallWindow callWindow = new CallWindow();
 
     @FXML
-    public void onMenuItemCreateAction()
-    {
-        callWindow.openWindow("/templates/UserForm.fxml", "Cadastro de Usuário");
-    }
+    private Menu menuUsers;
 
     @FXML
-    public void onMenuItemSearchAction()
+    private VBox vBoxUser;
+
+    @FXML
+    public void onMenuUsersAction()
     {
-        callWindow.openWindow("/templates/UserSearch.fxml", "Usuários de sistema");
+        callWindow.openWindow("/templates/UserList.fxml", "Usuários de sistema");
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        vBoxUser.setOnMouseEntered(event -> vBoxUser.setCursor(Cursor.HAND));
+        vBoxUser.setOnMouseExited(event -> vBoxUser.setCursor(Cursor.DEFAULT));
     }
 }

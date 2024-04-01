@@ -10,6 +10,8 @@ import project.nutri.AppJavaFx;
 
 public class CallWindow
 {
+    private static Scene mainScene;
+
     public void openWindow(String fxmlPath, String title)
     {
         try {
@@ -20,10 +22,15 @@ public class CallWindow
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.getIcons().add(icon);
-            stage.setScene(new Scene(root));
+            mainScene = new Scene(root);
+            stage.setScene(mainScene);
             stage.show();
         } catch(IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Scene getMainScene() {
+        return mainScene;
     }
 }
