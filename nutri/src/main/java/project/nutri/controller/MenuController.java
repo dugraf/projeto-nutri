@@ -9,6 +9,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.VBox;
 import project.nutri.controller.util.CallWindow;
+import project.nutri.controller.UserListController;
 
 @Component
 public class MenuController implements Initializable
@@ -24,7 +25,9 @@ public class MenuController implements Initializable
     @FXML
     public void onMenuUsersAction()
     {
-        callWindow.openWindow("/templates/UserList.fxml", "Usuários de sistema");
+        callWindow.openWindow("/templates/UserList.fxml", "Usuários de sistema", (UserListController controller) -> {
+            controller.updateTableView();
+        });
     }
 
     @Override

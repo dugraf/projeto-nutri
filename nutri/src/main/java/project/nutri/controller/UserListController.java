@@ -16,11 +16,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import project.nutri.controller.util.CallWindow;
+import project.nutri.controller.util.Utils;
+import project.nutri.controller.util.listeners.DataListener;
 import project.nutri.entities.User;
 import project.nutri.services.UserService;
 
 @Component
-public class UserListController implements Initializable
+public class UserListController implements Initializable, DataListener
 {
     @Autowired
     private UserService userService;
@@ -50,16 +52,16 @@ public class UserListController implements Initializable
     @FXML
     public void onVBoxNewUserAction()
     {
-        callWindow.openWindow("/templates/UserForm.fxml", "Usuários de sistema");
+        callWindow.openWindow("/templates/UserForm.fxml", "Usuários de sistema", null);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        showTable();
         vBoxNewUser.setOnMouseEntered(event -> vBoxNewUser.setCursor(Cursor.HAND));
         vBoxNewUser.setOnMouseExited(event -> vBoxNewUser.setCursor(Cursor.DEFAULT));
-        showTable();
     }
 
 
@@ -67,19 +69,24 @@ public class UserListController implements Initializable
         tColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        Utils.formatPassword(tColumnPassword);
         tColumnPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
 
         Stage stage = (Stage) CallWindow.getMainScene().getWindow();
-        tableViewUser.prefWidthProperty().bind(stage.heightProperty());
+        tableViewUser.prefWidthProperty().bind(stage.heightProperty()); //TABLEVIEW acompanhando a largura da janela (fazer metodo)
     }
 
     public void updateTableView()
     {
-        if(userService == null)
-            throw new IllegalStateException("Service was null");
         List<User> list = userService.findAll();
         observableList = FXCollections.observableArrayList(list);
         tableViewUser.setItems(observableList);
+    }
+
+
+    @Override
+    public void onDataChanged() {
+        updateTableView();
     }
     
 }

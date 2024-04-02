@@ -64,7 +64,7 @@ public class LoginController implements Initializable {
     }
     
     private void openMainMenu() {
-        callWindow.openWindow("/templates/MenuView.fxml", "MENU - Nutri");
+        callWindow.openWindow("/templates/MenuView.fxml", "MENU - Nutri", null);
     }
 
     private void closeLoginWindow() {
@@ -73,6 +73,6 @@ public class LoginController implements Initializable {
     }
 
     public static void loadView(Stage stage) {
-        callWindow.openWindow("/templates/LoginView.fxml", "Login - Nutri");
+        callWindow.openWindow("/templates/LoginView.fxml", "Login - Nutri", null);
     }
 }
