@@ -55,7 +55,6 @@ public class UserListController implements Initializable, DataListener
         callWindow.openWindow("/templates/UserForm.fxml", "Usuários de sistema", null);
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -63,7 +62,6 @@ public class UserListController implements Initializable, DataListener
         vBoxNewUser.setOnMouseEntered(event -> vBoxNewUser.setCursor(Cursor.HAND));
         vBoxNewUser.setOnMouseExited(event -> vBoxNewUser.setCursor(Cursor.DEFAULT));
     }
-
 
     private void showTable() {
         tColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -82,7 +80,6 @@ public class UserListController implements Initializable, DataListener
         observableList = FXCollections.observableArrayList(list);
         tableViewUser.setItems(observableList);
     }
-
 
     @Override
     public void onDataChanged() {

@@ -27,15 +27,15 @@
             <Label text="Nome" />
             <Label text="E-mail" GridPane.rowIndex="2" />
             <Label text="Senha" GridPane.rowIndex="4" />
-            <TextField fx:id="name" GridPane.columnIndex="1" />
-            <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtName" GridPane.columnIndex="1" />
+            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="155.0" layoutY="377.0" mnemonicParsing="false" onAction="#onBtSaveAction" text="Salvar" />
-      <Button layoutX="380.0" layoutY="377.0" mnemonicParsing="false" onAction="#onBtCancelAction" text="Cancelar" />
+      <Button fx:id="btSave" layoutX="155.0" layoutY="377.0" mnemonicParsing="false" onAction="#onBtSaveAction" text="Salvar" />
+      <Button fx:id="btCancel" layoutX="380.0" layoutY="377.0" mnemonicParsing="false" onAction="#onBtCancelAction" text="Cancelar" />
    </children>
 </AnchorPane>

@@ -2,7 +2,6 @@ package project.nutri.controller.util;
 
 import java.io.IOException;
 import java.util.function.Consumer;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -35,6 +34,7 @@ public class CallWindow
             stage.show();
         } catch(IOException e) {
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+            e.printStackTrace();
         }
     }
 

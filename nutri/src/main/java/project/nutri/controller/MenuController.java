@@ -9,7 +9,6 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.VBox;
 import project.nutri.controller.util.CallWindow;
-import project.nutri.controller.UserListController;
 
 @Component
 public class MenuController implements Initializable
