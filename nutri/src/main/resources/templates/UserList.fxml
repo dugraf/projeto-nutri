@@ -16,12 +16,14 @@
             <Font size="35.0" />
          </font>
       </Text>
-      <TableView fx:id="tableViewUser" layoutX="183.0" layoutY="63.0" prefHeight="542.0" prefWidth="694.0">
+      <TableView fx:id="tableViewUser" layoutX="87.0" layoutY="63.0" prefHeight="542.0" prefWidth="848.0">
         <columns>
           <TableColumn fx:id="tColumnId" prefWidth="61.0" text="ID" />
-          <TableColumn fx:id="tColumnName" minWidth="0.0" prefWidth="237.0" text="NOME" />
-            <TableColumn fx:id="tColumnEmail" prefWidth="266.0" text="E-MAIL" />
-            <TableColumn fx:id="tColumnPassword" prefWidth="130.0" text="SENHA" />
+          <TableColumn fx:id="tColumnName" minWidth="0.0" prefWidth="188.0" text="NOME" />
+            <TableColumn fx:id="tColumnEmail" prefWidth="237.0" text="E-MAIL" />
+            <TableColumn fx:id="tColumnPassword" prefWidth="208.0" text="SENHA" />
+            <TableColumn fx:id="tColumnUpdate" text="EDITAR" />
+            <TableColumn fx:id="tColumnDelete" prefWidth="71.0" text="EXCLUIR" />
         </columns>
       </TableView>
       <VBox fx:id="vBoxNewUser" layoutX="1009.0" onMouseClicked="#onVBoxNewUserAction" prefHeight="47.0" prefWidth="54.0">

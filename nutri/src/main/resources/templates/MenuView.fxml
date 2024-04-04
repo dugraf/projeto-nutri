@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1052.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.MenuController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1052.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.MenuController">
     <children>
         <VBox prefHeight="645.0" prefWidth="200.0" styleClass="menu">
             <children>
                 <VBox fx:id="vBoxUser" onMouseClicked="#onMenuUsersAction" styleClass="menu-item">
                     <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0">
+                        <ImageView fitHeight="57.0" fitWidth="56.0">
                             <image>
                                 <Image url="@imgs/user.png" />
                             </image>
