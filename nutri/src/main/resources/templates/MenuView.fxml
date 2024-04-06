@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -7,15 +8,20 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1052.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.MenuController">
     <children>
-        <VBox prefHeight="645.0" prefWidth="200.0" styleClass="menu">
+        <VBox prefHeight="645.0" prefWidth="256.0" styleClass="menu">
             <children>
                 <VBox fx:id="vBoxUser" onMouseClicked="#onMenuUsersAction" styleClass="menu-item">
                     <children>
-                        <ImageView fitHeight="57.0" fitWidth="56.0">
-                            <image>
-                                <Image url="@imgs/user.png" />
-                            </image>
-                        </ImageView>
+                  <HBox prefHeight="33.0" prefWidth="164.0">
+                     <children>
+                              <ImageView fitHeight="57.0" fitWidth="56.0">
+                                  <image>
+                                      <Image url="@imgs/user.png" />
+                                  </image>
+                              </ImageView>
+                        <Label fx:id="labelUsers" prefHeight="57.0" prefWidth="186.0" text="Cadastro de usuários" />
+                     </children>
+                  </HBox>
                     </children>
                 </VBox>
             </children>

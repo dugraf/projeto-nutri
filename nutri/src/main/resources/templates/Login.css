@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf');
+}
+
 .root {
     -fx-background-color: #282c34; /* Cor de fundo */
+    -fx-font-family: "Poppins";
 }
 
 .label {
@@ -26,6 +32,7 @@
     -fx-font-size: 16px; /* Tamanho da fonte */
     -fx-background-color: #3eafce; /* Cor de fundo do botão */
     -fx-text-fill: white; /* Cor do texto do botão */
+    -fx-cursor: hand;
 }
 
 .button:hover {

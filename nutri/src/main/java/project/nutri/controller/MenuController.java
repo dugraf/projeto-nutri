@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 import org.springframework.stereotype.Component;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.VBox;
 import project.nutri.controller.util.CallWindow;
@@ -32,7 +31,6 @@ public class MenuController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        vBoxUser.setOnMouseEntered(event -> vBoxUser.setCursor(Cursor.HAND));
-        vBoxUser.setOnMouseExited(event -> vBoxUser.setCursor(Cursor.DEFAULT));
+
     }
 }

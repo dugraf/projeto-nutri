@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf');
+}
+
+.root {
+    -fx-font-family: "Poppins";
+}
+
+.anchor-pane {
+    -fx-background-color: #f2f2f2;
+}
+
+.grid-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3399ff;
+}
+
+.label {
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-color: #3399ff;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2670e6;
+}
+
+.button:pressed {
+    -fx-background-color: #1953b6;
+}

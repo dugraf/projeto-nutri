@@ -9,31 +9,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="619.0" prefWidth="1063.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.UserListController">
-   <children>
-      <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários" wrappingWidth="145.43359375">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Text>
-      <TableView fx:id="tableViewUser" layoutX="87.0" layoutY="63.0" prefHeight="542.0" prefWidth="848.0">
-        <columns>
-          <TableColumn fx:id="tColumnId" prefWidth="61.0" text="ID" />
-          <TableColumn fx:id="tColumnName" minWidth="0.0" prefWidth="188.0" text="NOME" />
-            <TableColumn fx:id="tColumnEmail" prefWidth="237.0" text="E-MAIL" />
-            <TableColumn fx:id="tColumnPassword" prefWidth="208.0" text="SENHA" />
-            <TableColumn fx:id="tColumnUpdate" text="EDITAR" />
-            <TableColumn fx:id="tColumnDelete" prefWidth="71.0" text="EXCLUIR" />
-        </columns>
-      </TableView>
-      <VBox fx:id="vBoxNewUser" layoutX="1009.0" onMouseClicked="#onVBoxNewUserAction" prefHeight="47.0" prefWidth="54.0">
+<AnchorPane prefHeight="619.0" prefWidth="1063.0" stylesheets="@UserList.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.UserListController">
+    <children>
+        <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários" wrappingWidth="218.43359375">
+            <font>
+                <Font name="Poppins Regular" size="35.0" />
+            </font>
+        </Text>
+        <TableView fx:id="tableViewUser" layoutX="87.0" layoutY="63.0" prefHeight="542.0" prefWidth="847.0">
+            <columns>
+                <TableColumn fx:id="tColumnId" prefWidth="61.0" text="ID" />
+                <TableColumn fx:id="tColumnName" minWidth="0.0" prefWidth="188.0" text="NOME" />
+                <TableColumn fx:id="tColumnEmail" prefWidth="237.0" text="E-MAIL" />
+                <TableColumn fx:id="tColumnPassword" prefWidth="161.0" text="SENHA" />
+                <TableColumn fx:id="tColumnUpdate" prefWidth="127.0" text="EDITAR" />
+                <TableColumn fx:id="tColumnDelete" prefWidth="71.0" text="EXCLUIR" />
+            </columns>
+        </TableView>
+        <VBox fx:id="vBoxNewUser" layoutX="994.0" onMouseClicked="#onVBoxNewUserAction" prefHeight="69.0" prefWidth="69.0">
          <children>
-            <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@imgs/addUser.png" />
-               </image>
-            </ImageView>
+                <ImageView fitHeight="69.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/addUser.png" />
+                    </image>
+                </ImageView>
          </children>
-      </VBox>
-   </children>
+        </VBox>
+    </children>
 </AnchorPane>

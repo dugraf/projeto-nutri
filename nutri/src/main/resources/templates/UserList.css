@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf');
+}
+
+.root {
+    -fx-font-family: "Poppins";
+}
+
+.anchor-pane {
+    -fx-background-color: #f2f2f2;
+}
+
+.text {
+    -fx-fill: #333333;
+    -fx-font-size: 1rem;
+    -fx-font-weight: bold;
+}
+
+.table-column-header {
+    -fx-background-color: #3399ff;
+    -fx-text-fill: #ffffff;
+}
+
+.v-box {
+    -fx-background-color: #3399ff;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.v-box:hover {
+    -fx-background-color: #2670e6;
+}
+
+.v-box:pressed {
+    -fx-background-color: #1953b6;
+}
+
+/* UserList.css */
+
+/* Estilo para a tabela */
+.table-view {
+    -fx-background-color: #f2f2f2; /* Cor de fundo da tabela */
+}
+
+/* Estilo para os cabeçalhos das colunas */
+.table-column {
+    -fx-background-color: #3399ff; /* Cor de fundo dos cabeçalhos das colunas */
+    -fx-text-fill: white; /* Cor do texto dos cabeçalhos das colunas */
+}
+
+/* Estilo para as células da tabela */
+.table-cell {
+    -fx-background-color: #ffffff; /* Cor de fundo das células */
+    -fx-text-fill: #333333; /* Cor do texto nas células */
+}
+
+/* Estilo para células alternadas (linhas listradas) */
+.table-row-cell:odd {
+    -fx-background-color: transparent; /* Cor de fundo das células de linhas ímpares */
+}
+
+/* Estilo para células selecionadas */
+.table-row-cell:selected {
+    -fx-background-color: #66ccff; /* Cor de fundo das células selecionadas */
+    -fx-text-fill: white; /* Cor do texto nas células selecionadas */
+}
