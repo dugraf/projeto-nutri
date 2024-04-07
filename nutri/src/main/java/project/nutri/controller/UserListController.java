@@ -64,7 +64,9 @@ public class UserListController implements Initializable, DataListener
 
     @FXML
     public void onVBoxNewUserAction() {
-        callWindow.openWindow("/templates/UserForm.fxml", "Cadastro de Usuário", null);
+        callWindow.openWindow("/templates/UserForm.fxml", "Cadastro de Usuário", (UserFormController controller) -> {
+            controller.subscribeDataChangeListener(this);
+        });
         updateTableView();
     }
 
@@ -108,26 +110,16 @@ public class UserListController implements Initializable, DataListener
                 Button button = (Button) event.getSource();
                 TableCell<User, User> cell = (TableCell<User, User>) button.getParent();
                 User user = cell.getTableRow().getItem();
-                removeEntity(user);
+                Optional<ButtonType> result = Alerts.showConfirmation("Confirmação", "Você tem certeza?");
+                if(result.get() == ButtonType.OK)
+                    try {
+                        userService.delete(user);
+                        updateTableView();
+                    } catch(DbIntegrityException e) {
+                        Alerts.showAlert("Erro ao deletar", null, e.getMessage(), AlertType.ERROR);
+                    }
                 this.updateTableView();
             });
-    }
-
-    private void removeEntity(User obj)
-    {
-        Optional<ButtonType> result = Alerts.showConfirmation("Confirmação", "Você tem certeza?");
-        if(result.get() == ButtonType.OK)
-        {
-            try
-            {
-                userService.delete(obj);
-                updateTableView();
-            }
-            catch(DbIntegrityException e)
-            {
-                Alerts.showAlert("Erro ao deletar", null, e.getMessage(), AlertType.ERROR);
-            }
-        }
     }
 
     public void updateTableView()
