@@ -40,4 +40,9 @@ public class User implements Serializable
         this.registrationDate = registrationDate;
         this.lastLogin = lastLogin;
     }
+
+    public void setPassword(String password)
+    {
+        this.password = Encrypt.encoder(password);
+    }
 }
