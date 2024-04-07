@@ -19,7 +19,7 @@ public class AuthenticationService
         if(user != null)
         {
             user.setLastLogin(LocalDateTime.now());
-            userService.save(user);
+            userService.saveOrUpdate(user);
             return Encrypt.validatePassword(password, user.getPassword());
         }
         return false;

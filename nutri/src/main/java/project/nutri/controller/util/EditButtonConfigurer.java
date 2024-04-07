@@ -12,12 +12,11 @@ import javafx.scene.image.ImageView;
 
 public class EditButtonConfigurer
 {
-    public static <T> void configureButtonCell(TableColumn<T, T> column, String imagePath, EventHandler<ActionEvent> actionHandler)
-    {
+    public static <T> void configureButtonCell(TableColumn<T, T> column, String imagePath, EventHandler<ActionEvent> actionHandler) {
         column.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         column.setCellFactory(param -> new TableCell<T, T>() {
             private final Button editButton = new Button();
-
+    
             {
                 Image editImage = new Image(getClass().getResourceAsStream(imagePath));
                 ImageView imageView = new ImageView(editImage);

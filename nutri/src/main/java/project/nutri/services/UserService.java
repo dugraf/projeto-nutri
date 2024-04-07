@@ -29,10 +29,18 @@ public class UserService
         return repository.findByName(name);
     }
 
-    public void save(User user)
+    public void saveOrUpdate(User user)
     {
-        repository.save(user);
-    }
+        if(user.getId() == null)
+            repository.save(user);
+        else {
+            User existingUser = repository.findById(user.getId()).orElse(null);
+            existingUser.setName(user.getName());
+            existingUser.setEmail(user.getEmail());
+            existingUser.setPassword(user.getPassword());
+            repository.save(existingUser);
+        }
+    }    
 
     public void delete(User user)
     {

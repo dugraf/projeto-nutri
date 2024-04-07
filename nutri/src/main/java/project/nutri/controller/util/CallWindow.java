@@ -2,7 +2,6 @@ package project.nutri.controller.util;
 
 import java.io.IOException;
 import java.util.function.Consumer;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -89,17 +89,27 @@ public class UserListController implements Initializable, DataListener
     }
     
     private void initUpdateData() {
-        EditButtonConfigurer.configureButtonCell(tColumnUpdate, "/templates/imgs/edit.png", 
-            event -> callWindow.openWindow("/templates/UserForm.fxml", "title", null));
-    }
-    
+        EditButtonConfigurer.configureButtonCell(tColumnUpdate, "/templates/imgs/edit.png",
+            event -> {
+                Button button = (Button) event.getSource();
+                TableCell<User, User> cell = (TableCell<User, User>) button.getParent();
+                User user = cell.getTableRow().getItem();
+                callWindow.openWindow("/templates/UserForm.fxml", "Editar Usuário", (UserFormController controller) -> {
+                        controller.setUser(user);
+                        controller.subscribeDataChangeListener(this);
+                        controller.updateFormData();
+                    });
+                });
+    }    
+
     private void initDeleteData() {
-        EditButtonConfigurer.configureButtonCell(tColumnDelete, "/templates/imgs/delete.png", 
+        EditButtonConfigurer.configureButtonCell(tColumnDelete, "/templates/imgs/delete.png",
             event -> {
                 Button button = (Button) event.getSource();
                 TableCell<User, User> cell = (TableCell<User, User>) button.getParent();
                 User user = cell.getTableRow().getItem();
                 removeEntity(user);
+                this.updateTableView();
             });
     }
 
