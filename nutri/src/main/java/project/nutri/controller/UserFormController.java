@@ -25,6 +25,7 @@ import project.nutri.controller.util.listeners.DataListener;
 import project.nutri.entities.User;
 import project.nutri.services.UserService;
 import project.nutri.services.exceptions.DataIntegrityException;
+import project.nutri.services.utils.Encrypt;
 
 @Component
 public class UserFormController implements Initializable
@@ -113,7 +114,7 @@ public class UserFormController implements Initializable
         
         if(txtPassword.getText() == null || txtPassword.getText().trim().equals(""))
             exception.addError("password", "Campo SENHA não pode estar vazio!");
-        user.setPassword(txtPassword.getText());
+        user.setPassword(Encrypt.encoder(txtPassword.getText()));
 
         user.setRegistrationDate(LocalDateTime.now());
 

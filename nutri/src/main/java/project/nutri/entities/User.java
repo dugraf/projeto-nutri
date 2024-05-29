@@ -17,7 +17,6 @@ import project.nutri.services.utils.Encrypt;
 @Table(name = "users")
 @Data
 @NoArgsConstructor
-@ToString
 public class User implements Serializable
 {
     private static final long serialVersionUID = 1L;
@@ -39,10 +38,5 @@ public class User implements Serializable
         this.password = Encrypt.encoder(password);
         this.registrationDate = registrationDate;
         this.lastLogin = lastLogin;
-    }
-
-    public void setPassword(String password)
-    {
-        this.password = Encrypt.encoder(password);
     }
 }
