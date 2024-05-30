@@ -20,12 +20,10 @@ import javafx.scene.control.Alert.AlertType;
 import project.nutri.controller.util.Alerts;
 import project.nutri.controller.util.CallWindow;
 import project.nutri.controller.util.Constraints;
-import project.nutri.controller.util.Utils;
 import project.nutri.controller.util.listeners.DataListener;
 import project.nutri.entities.User;
 import project.nutri.services.UserService;
 import project.nutri.services.exceptions.DataIntegrityException;
-import project.nutri.services.utils.Encrypt;
 
 @Component
 public class UserFormController implements Initializable
@@ -68,17 +66,14 @@ public class UserFormController implements Initializable
     @FXML
     public void onBtSaveAction(ActionEvent event)
     {
-        try
-        {
-            if(CallWindow.currentStage(event).getTitle().equals("Editar Usuário"))
-            {
+        try {
+            if(CallWindow.currentStage(event).getTitle().equals("Editar Usuário")) {
                 Long id = user.getId();
                 user = getFormData();
                 user.setId(id);
                 userService.saveOrUpdate(user);
             }
-            else
-            {
+            else {
                 user = getFormData();
                 userService.saveOrUpdate(user);
             }
@@ -86,9 +81,7 @@ public class UserFormController implements Initializable
             stage.close();
             Alerts.showAlert("SALVO", "Usuário salvo no sistema", null, AlertType.CONFIRMATION);
             notifyDataListeners();
-        }
-        catch(DataIntegrityException e)
-        {
+        } catch(DataIntegrityException e) {
             setErrorMessages(e.getErrors());
         }
     }
@@ -99,8 +92,7 @@ public class UserFormController implements Initializable
         }
     }
 
-    private User getFormData()
-    {
+    private User getFormData() {
         DataIntegrityException exception = new DataIntegrityException("Erro de integridade");
 
         if(txtName.getText() == null || txtName.getText().trim().equals(""))
@@ -119,21 +111,19 @@ public class UserFormController implements Initializable
     }
 
     @FXML
-    public void onBtCancelAction(ActionEvent event)
-    {
+    public void onBtCancelAction(ActionEvent event) {
         CallWindow.currentStage(event).close();
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
+    public void initialize(URL url, ResourceBundle rb) {
         initializeRules();
     }
 
-    private void initializeRules() { //REVIEW - CRIAR CONSTANTE
-        Constraints.setTextFieldMaxLength(txtName, 30);
-        Constraints.setTextFieldMaxLength(txtEmail, 40);
-        Constraints.setTextFieldMinMaxLength(txtPassword, 2, 3);
+    private void initializeRules() {
+        Constraints.setTextFieldMaxLength(txtName, Constraints.MAX_NAME_LENGTH);
+        Constraints.setTextFieldMaxLength(txtEmail, Constraints.MAX_EMAIL_LENGTH);
+        Constraints.setTextFieldMinMaxLength(txtPassword, Constraints.MIN_PASSWORD_LENGTH, Constraints.MAX_PASSWORD_LENGTH);
     }
 
     private void setErrorMessages(Map<String, String> errors) {
@@ -144,8 +134,7 @@ public class UserFormController implements Initializable
         labelPasswordError.setText((fields.contains("password") ? errors.get("password") : ""));
     }
 
-    public void subscribeDataChangeListener(DataListener listener)
-    {
+    public void subscribeDataChangeListener(DataListener listener) {
         dataChangeListeners.add(listener);
     }
 
