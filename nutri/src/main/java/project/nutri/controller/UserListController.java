@@ -113,7 +113,7 @@ public class UserListController implements Initializable, DataListener
                 Optional<ButtonType> result = Alerts.showConfirmation("Confirmação", "Você tem certeza?");
                 if(result.get() == ButtonType.OK)
                     try {
-                        userService.delete(user);
+                        userService.delete(user.getId());
                         updateTableView();
                     } catch(DbIntegrityException e) {
                         Alerts.showAlert("Erro ao deletar", null, e.getMessage(), AlertType.ERROR);

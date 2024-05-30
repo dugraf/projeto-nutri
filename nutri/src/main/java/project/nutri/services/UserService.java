@@ -8,29 +8,24 @@ import project.nutri.entities.User;
 import project.nutri.repositories.UserRepository;
 
 @Service
-public class UserService
-{
+public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public List<User> findAll()
-    {
+    public List<User> findAll() {
         return repository.findAll();
     }
 
-    public User findById(Long id)
-    {
+    public User findById(Long id) {
         Optional<User> obj = repository.findById(id);
         return obj.get();
     }
 
-    public User findByName(String name)
-    {
+    public User findByName(String name) {
         return repository.findByName(name);
     }
 
-    public void saveOrUpdate(User user)
-    {
+    public void saveOrUpdate(User user) {
         if(user.getId() == null)
             repository.save(user);
         else {
@@ -43,8 +38,7 @@ public class UserService
         }
     }    
 
-    public void delete(User user)
-    {
-        repository.delete(user);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 }
