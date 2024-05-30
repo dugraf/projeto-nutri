@@ -101,27 +101,21 @@ public class UserFormController implements Initializable
 
     private User getFormData()
     {
-        User user = new User();
         DataIntegrityException exception = new DataIntegrityException("Erro de integridade");
 
         if(txtName.getText() == null || txtName.getText().trim().equals(""))
             exception.addError("name", "Campo NOME não pode estar vazio!");
-        user.setName(txtName.getText());
 
         if(txtEmail.getText() == null || txtEmail.getText().trim().equals(""))
             exception.addError("email", "Campo E-MAIL não pode estar vazio!");
-        user.setEmail(txtEmail.getText());
         
         if(txtPassword.getText() == null || txtPassword.getText().trim().equals(""))
             exception.addError("password", "Campo SENHA não pode estar vazio!");
-        user.setPassword(Encrypt.encoder(txtPassword.getText()));
-
-        user.setRegistrationDate(LocalDateTime.now());
 
         if(exception.getErrors().size() > 0)
             throw exception;
 
-        return user;
+        return new User(null, txtName.getText(), txtEmail.getText(), txtPassword.getText(), LocalDateTime.now(), null);
     }
 
     @FXML

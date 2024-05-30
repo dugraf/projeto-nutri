@@ -38,6 +38,7 @@ public class UserService
             existingUser.setName(user.getName());
             existingUser.setEmail(user.getEmail());
             existingUser.setPassword(user.getPassword());
+            existingUser.setLastLogin(user.getLastLogin());
             repository.save(existingUser);
         }
     }    

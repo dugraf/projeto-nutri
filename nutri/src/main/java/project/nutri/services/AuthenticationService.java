@@ -13,14 +13,13 @@ public class AuthenticationService
     @Autowired
     private UserService userService;
 
-    public boolean authentication(String name, String password)
-    {
+    public boolean authentication(String name, String password) {
         User user = userService.findByName(name);
-        if(user != null)
+        if (user != null && Encrypt.validatePassword(password, user.getPassword()))
         {
             user.setLastLogin(LocalDateTime.now());
             userService.saveOrUpdate(user);
-            return Encrypt.validatePassword(password, user.getPassword());
+            return true;
         }
         return false;
     }
