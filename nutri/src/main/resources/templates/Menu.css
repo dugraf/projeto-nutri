@@ -20,16 +20,20 @@
     -fx-transition: transform 0.2s;
 }
 
-.menu-item:hover {
+#hBoxUser {
+    -fx-cursor: hand;
+}
+
+#hBoxUser:hover {
     -fx-background-color: #03616b;
 }
 
-.menu-item:selected {
+#hBoxUser:selected {
     -fx-background-color: #2980b9;
 }
 
-#vBoxUser {
-    -fx-cursor: hand;
+#hBoxUser:hover #labelUsers {
+    -fx-opacity: 1; /* Torna visível ao passar o mouse */
 }
 
 #labelUsers {
@@ -39,6 +43,32 @@
     -fx-text-fill: #FFFFFF; /* Cor branca */
 }
 
-#vBoxUser:hover #labelUsers {
+#hBoxClient {
+    -fx-cursor: hand;
+}
+
+#hBoxClient:hover {
+    -fx-background-color: #03616b;
+}
+
+#hBoxClient:selected {
+    -fx-background-color: #2980b9;
+}
+
+#labelClients {
+    -fx-opacity: 0; /* Inicialmente invisível */
+    -fx-transition: opacity 0.3s;
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF; /* Cor branca */
+}
+
+#hBoxClient:hover #labelClients {
     -fx-opacity: 1; /* Torna visível ao passar o mouse */
+}
+
+#labelClients {
+    -fx-opacity: 0; /* Inicialmente invisível */
+    -fx-transition: opacity 0.3s;
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF; /* Cor branca */
 }

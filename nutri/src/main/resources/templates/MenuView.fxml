@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,20 +9,48 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1052.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.nutri.controller.MenuController">
     <children>
-        <VBox prefHeight="645.0" prefWidth="256.0" styleClass="menu">
+        <VBox prefHeight="645.0" prefWidth="313.0" styleClass="menu">
             <children>
-                <VBox fx:id="vBoxUser" onMouseClicked="#onMenuUsersAction" styleClass="menu-item">
+                <VBox>
                     <children>
-                  <HBox prefHeight="33.0" prefWidth="164.0">
+                  <HBox fx:id="hBoxUser" onMouseClicked="#onMenuUsersAction" prefHeight="40.0" prefWidth="165.0">
                      <children>
-                              <ImageView fitHeight="57.0" fitWidth="56.0">
+                              <ImageView fitHeight="60.0" fitWidth="60.0">
                                   <image>
                                       <Image url="@imgs/user.png" />
                                   </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
                               </ImageView>
-                        <Label fx:id="labelUsers" prefHeight="57.0" prefWidth="186.0" text="Cadastro de usuários" />
+                        <Label fx:id="labelUsers" prefHeight="57.0" prefWidth="186.0" text="Cadastro de usuários">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Label>
                      </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
                   </HBox>
+                  <HBox fx:id="hBoxClient" onMouseClicked="#onMenuClientsAction" prefHeight="40.0" prefWidth="165.0">
+                    <children>
+                             <ImageView fitHeight="60.0" fitWidth="60.0">
+                                 <image>
+                                     <Image url="@imgs/client.png" />
+                                 </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                             </ImageView>
+                       <Label fx:id="labelClients" prefHeight="57.0" prefWidth="186.0" text="Cadastro de clientes">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                 </HBox>
                     </children>
                 </VBox>
             </children>
